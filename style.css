@@ -347,36 +347,35 @@ nav {
 
 /* 7. RESPONSIVIDADE (Telas menores que 768px, como celulares) */
 @media (max-width: 768px) {
-    header {
+   header {
         padding: 15px 5%;
     }
 
-    /* Solução do Topo: Empilha Logo e Menu verticalmente */
     nav {
-        flex-direction: column !important; /* Força empilhamento vertical */
+        flex-direction: column !important;
         gap: 15px;
-        position: static; /* Solta o nav do modo relativo */
+        position: relative;
         justify-content: center;
         align-items: center;
     }
 
     .logo {
-        position: static; /* Solta a logo do posicionamento absoluto */
-        left: auto; /* Reseta a posição esquerda */
+        position: static !important; /* Desliga o posicionamento fixo à esquerda */
+        display: block;
         text-align: center;
         margin-bottom: 5px;
     }
 
     .menu {
-        gap: 15px; /* Diminui o espaço entre os botões do menu */
-        padding: 8px 15px; /* Diminui o tamanho da 'pílula' */
-        font-size: 0.9rem; /* Diminui um pouco a letra */
-        justify-content: center; /* Centraliza os links dentro da pílula mobile */
+        flex-wrap: wrap; /* Permite que o menu se divida em duas linhas se necessário */
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 15px;
+        font-size: 0.85rem;
     }
 
-    /* O Showreel precisa descer mais para não ser coberto pelo novo menu vertical mais alto */
     #showreel {
-        margin-top: 150px; 
+        margin-top: 180px; /* Dá mais margem para o cabeçalho que agora é mais alto */
     }
 
     .video-destaque {
@@ -387,17 +386,55 @@ nav {
         font-size: 1.8rem;
     }
 
-    /* Solução do Rodapé: Força centralização absoluta */
-    footer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    footer p {
-        width: 100%;
-        text-align: center !important; /* Força centralização do texto */
-        margin: 0 !important; /* Garante que nenhuma margem desalinhe */
-    }
+    /* ==================================================
+   RODAPÉ E REDES SOCIAIS (CORRIGIDO)
+   ================================================== */
+footer {
+    background-color: #050505;
+    padding: 40px 5%;
+    border-top: 1px solid #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Força tudo a ficar perfeitamente centrado */
+    justify-content: center;
+}
+
+footer p {
+    color: #555555;
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0;
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.link-social {
+    font-size: 1.5rem; /* Ícones maiores para destaque */
+    background: #121212;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid #1a1a1a;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.link-social:hover {
+    transform: translateY(-5px);
+    opacity: 1;
+    border-color: #e50914;
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.3);
+}
 }
 
 /* 9. SEÇÃO CANAL EM DESTAQUE */
