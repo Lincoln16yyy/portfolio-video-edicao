@@ -13,8 +13,7 @@ html {
 }
 
 body {
-    background-color: #030303; /* Quase preto puro */
-    /* Grid sutil e Glow nos cantos para profundidade */
+    background-color: #030303; 
     background-image: 
         radial-gradient(circle at 10% 20%, rgba(229, 9, 20, 0.08), transparent 40%),
         radial-gradient(circle at 90% 80%, rgba(229, 9, 20, 0.05), transparent 40%),
@@ -29,7 +28,6 @@ body {
 
 a { text-decoration: none; color: inherit; }
 
-/* Tipografia / Hierarquia */
 .destaque-vermelho {
     color: #e50914;
     text-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
@@ -55,7 +53,6 @@ a { text-decoration: none; color: inherit; }
     margin-top: 10px;
 }
 
-/* Espaçamento Premium */
 section {
     padding: 130px 5%;
     position: relative;
@@ -67,7 +64,7 @@ section {
 header {
     background-color: rgba(3, 3, 3, 0.85);
     backdrop-filter: blur(15px);
-    padding: 25px 5%; /* Mais respiro vertical */
+    padding: 25px 5%; 
     position: fixed; 
     width: 100%;
     top: 0;
@@ -85,7 +82,7 @@ nav {
 .logo {
     position: absolute;
     left: 5%;
-    font-size: 1.8rem; /* Logo maior e mais imponente */
+    font-size: 1.8rem; 
     font-weight: 800;
     color: #e50914; 
     letter-spacing: 2px;
@@ -94,7 +91,7 @@ nav {
 .menu {
     list-style: none;
     display: flex; 
-    gap: 40px; /* Mais espaço entre os links */
+    gap: 40px; 
     background: rgba(255, 255, 255, 0.02); 
     padding: 15px 40px;
     border-radius: 50px; 
@@ -136,11 +133,11 @@ nav {
 
 .hero-texto {
     flex: 1;
-    max-width: 600px; /* Texto mais contido = visual elegante */
+    max-width: 600px; 
 }
 
 .hero-texto h1 {
-    font-size: 4.5rem; /* Título GIGANTE */
+    font-size: 4.5rem; 
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 25px;
@@ -151,7 +148,7 @@ nav {
     font-size: 1.2rem;
     color: #aaa;
     margin-bottom: 40px;
-    min-height: 60px; /* Evita pulos do JS */
+    min-height: 60px; 
 }
 
 .hero-botoes {
@@ -160,7 +157,7 @@ nav {
 }
 
 .hero-video {
-    flex: 1.2; /* Ocupa um pouco mais de espaço visual */
+    flex: 1.2; 
 }
 
 .video-destaque {
@@ -179,7 +176,6 @@ nav {
     50% { transform: translateY(-15px); }
 }
 
-/* BOTÕES PREMIUM */
 .btn-primario, .btn-secundario {
     padding: 16px 35px;
     border-radius: 8px;
@@ -216,84 +212,19 @@ nav {
 }
 
 /* ==================================================
-   4. DESTAQUE (KINOFIT)
+   4. PROJETOS (AUMENTADOS E RESPONSIVOS)
    ================================================== */
-.card-destaque {
-    background: linear-gradient(135deg, #111 0%, #050505 100%);
-    border: 1px solid rgba(255,255,255,0.05);
-    border-radius: 20px;
-    padding: 60px;
-    display: flex;
-    gap: 50px;
-    max-width: 1000px;
-    margin: 0 auto;
-    align-items: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-    position: relative;
-    overflow: hidden;
+#projetos {
+    background-color: #080808;
+    border-top: 1px solid rgba(255,255,255,0.02);
 }
 
-.card-destaque::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 4px; height: 100%;
-    background: #e50914;
-}
-
-.tag-editorial {
-    display: inline-block;
-    color: #e50914;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-}
-
-.texto-destaque { flex: 1; }
-
-.texto-destaque h2 {
-    font-size: 2.5rem;
-    color: #fff;
-    margin-bottom: 15px;
-}
-
-.texto-destaque p {
-    color: #888;
-    font-size: 1.1rem;
-}
-
-.link-canal {
-    display: inline-block;
-    margin-top: 25px;
-    color: #fff;
-    font-weight: 600;
-    border-bottom: 1px solid #e50914;
-    padding-bottom: 5px;
-    transition: 0.3s;
-}
-
-.link-canal:hover {
-    color: #e50914;
-}
-
-.foto-canal {
-    background: #000;
-    width: 150px; height: 150px;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 4rem;
-    box-shadow: inset 0 0 30px rgba(229, 9, 20, 0.2);
-}
-
-/* ==================================================
-   5. PROJETOS (CARDS INTERATIVOS)
-   ================================================== */
 .grid-projetos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    /* Aumentando drasticamente o tamanho dos vídeos: 2 por linha em desktop */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 40px;
-    max-width: 1200px;
+    max-width: 1400px; /* Max-width maior para caber os vídeos grandes */
     margin: 0 auto;
 }
 
@@ -306,7 +237,7 @@ nav {
 }
 
 .thumb-container {
-    height: 220px;
+    height: 350px; /* Altura maior para acompanhar a largura maior */
     background: #111;
     position: relative;
 }
@@ -328,33 +259,8 @@ nav {
 }
 
 /* ==================================================
-   6. PREÇOS, CONTATO E CTA FINAL
+   5. CONTATO E RESPONSIVIDADE
    ================================================== */
-.lista-precos {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex; flex-direction: column; gap: 20px;
-}
-
-.item-preco {
-    background: #0a0a0a;
-    padding: 30px;
-    border-radius: 12px;
-    display: flex; justify-content: space-between; align-items: center;
-    border: 1px solid #1a1a1a;
-    transition: 0.3s;
-}
-
-.item-preco:hover {
-    transform: scale(1.02);
-    border-color: #555;
-}
-
-.destaque-item {
-    background: linear-gradient(90deg, rgba(229, 9, 20, 0.05) 0%, transparent 100%);
-    border-left: 4px solid #e50914;
-}
-
 .contato-container {
     display: flex; gap: 60px; max-width: 1100px; margin: 0 auto; align-items: center;
 }
@@ -366,19 +272,6 @@ nav {
 .botao-enviar { width: 100%; background: #e50914; color: #fff; padding: 18px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
 .botao-enviar:hover { background: #b80710; }
 
-#cta-final {
-    text-align: center;
-    background: linear-gradient(180deg, #030303 0%, rgba(229, 9, 20, 0.05) 100%);
-    padding: 150px 5%;
-}
-
-#cta-final h2 { font-size: 3.5rem; margin-bottom: 20px; }
-#cta-final p { color: #888; font-size: 1.2rem; margin-bottom: 40px; }
-.btn-gigante { font-size: 1.2rem; padding: 20px 50px; }
-
-/* ==================================================
-   7. RODAPÉ E REDES SOCIAIS
-   ================================================== */
 footer {
     background-color: #000; padding: 50px 5%; border-top: 1px solid #111;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -387,9 +280,6 @@ footer {
 .link-social { font-size: 1.2rem; background: #111; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid #222; opacity: 0.7; transition: 0.3s; }
 .link-social:hover { opacity: 1; border-color: #e50914; transform: translateY(-5px); }
 
-/* ==================================================
-   8. EFEITOS E SCROLL REVEAL
-   ================================================== */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #000; }
 ::-webkit-scrollbar-thumb { background: #e50914; border-radius: 4px; }
@@ -397,19 +287,17 @@ footer {
 .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-/* Botão Wpp */
 .whatsapp-flutuante { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; z-index: 1000; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); transition: 0.3s; }
 .whatsapp-flutuante:hover { transform: scale(1.1); }
 
 /* ==================================================
-   9. RESPONSIVO (MOBILE FIRST APPROACH)
+   9. RESPONSIVO (mobile) - IMPRESCINDÍVEL
    ================================================== */
 @media (max-width: 900px) {
-    .hero-container, .card-destaque, .contato-container { flex-direction: column; text-align: center; }
+    .hero-container, .contato-container { flex-direction: column; text-align: center; }
     .hero-texto h1 { font-size: 3rem; }
     .hero-botoes { justify-content: center; flex-direction: column; }
     .video-destaque { margin-top: 30px; }
-    .card-destaque { padding: 40px 20px; }
 }
 
 @media (max-width: 768px) {
@@ -420,4 +308,13 @@ footer {
     #showreel { margin-top: 150px; }
     .titulo-secao h2, #cta-final h2 { font-size: 2.2rem; }
     .contato-form { padding: 30px 20px; }
+    
+    /* Novo: No mobile, os vídeos ocupam 100% da largura da tela */
+    .grid-projetos {
+        grid-template-columns: 1fr; /* 1 vídeo por linha no mobile */
+        gap: 20px;
+    }
+    .thumb-container {
+        height: 200px; /* Altura menor no mobile para não esticar */
+    }
 }
