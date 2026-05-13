@@ -81,6 +81,7 @@ nav {
     border-radius: 50px; 
     border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
 }
 
 .menu a {
@@ -344,32 +345,58 @@ nav {
     }
 }
 
-/* 7. RESPONSIVIDADE (Telas menores que 768px) */
+/* 7. RESPONSIVIDADE (Telas menores que 768px, como celulares) */
 @media (max-width: 768px) {
     header {
         padding: 15px 5%;
     }
-    
+
+    /* Solução do Topo: Empilha Logo e Menu verticalmente */
     nav {
-        flex-direction: column; 
+        flex-direction: column !important; /* Força empilhamento vertical */
         gap: 15px;
+        position: static; /* Solta o nav do modo relativo */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo {
+        position: static; /* Solta a logo do posicionamento absoluto */
+        left: auto; /* Reseta a posição esquerda */
+        text-align: center;
+        margin-bottom: 5px;
     }
 
     .menu {
-        gap: 15px; 
-        font-size: 0.9rem; 
+        gap: 15px; /* Diminui o espaço entre os botões do menu */
+        padding: 8px 15px; /* Diminui o tamanho da 'pílula' */
+        font-size: 0.9rem; /* Diminui um pouco a letra */
+        justify-content: center; /* Centraliza os links dentro da pílula mobile */
     }
 
+    /* O Showreel precisa descer mais para não ser coberto pelo novo menu vertical mais alto */
     #showreel {
-        margin-top: 140px; 
+        margin-top: 150px; 
     }
 
     .video-destaque {
-        height: 220px; 
+        height: 220px; /* Vídeo menor no celular */
     }
     
-    #showreel h1, #projetos h2, #servicos h2, #contato h2 {
+    #showreel h1, #parceria h2, #projetos h2, #precos h2, #contato h2 {
         font-size: 1.8rem;
+    }
+
+    /* Solução do Rodapé: Força centralização absoluta */
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    footer p {
+        width: 100%;
+        text-align: center !important; /* Força centralização do texto */
+        margin: 0 !important; /* Garante que nenhuma margem desalinhe */
     }
 }
 
