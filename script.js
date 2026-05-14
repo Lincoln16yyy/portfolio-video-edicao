@@ -48,3 +48,18 @@ const observador = new IntersectionObserver((entradas) => {
 elementosReveal.forEach(elemento => {
     observador.observe(elemento);
 });
+
+function toggleFAQ(element) {
+    const item = element.parentElement;
+    const isActive = item.classList.contains('ativo');
+    
+    // Fechar todos os outros
+    document.querySelectorAll('.faq-item').forEach(el => {
+        el.classList.remove('ativo');
+    });
+    
+    // Abrir o clicado
+    if (!isActive) {
+        item.classList.add('ativo');
+    }
+}
