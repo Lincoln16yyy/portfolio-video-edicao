@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lincoln Gustavo - Edição Cinematográfica</title>
+    
+    <!-- SEO & Redes Sociais -->
+    <meta name="description" content="Editor de vídeo focado em retenção e storytelling cinematográfico. Transforme seu conteúdo bruto em vídeos magnéticos.">
+    <meta name="keywords" content="edição de vídeo, gaming, documentário, retenção, storytelling, editor de vídeo youtube">
+    <meta property="og:title" content="Lincoln Gustavo - Portfolio de Edição">
+    <meta property="og:description" content="Edição que retém a atenção e eleva o nível do seu canal.">
+    <meta property="og:type" content="website">
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body lang="pt-BR">
+    <div id="scroll-progress"></div>
 
     <header>
         <nav>
            <div class="logo">Lincoln Gustavo.</div>
             <ul class="menu">
                 <li><a href="#showreel">Showreel</a></li>
-                <li><a href="#projetos">Projetos</a></li> <li><a href="#contato">Contato</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -32,8 +42,9 @@
             </div>
             
             <div class="hero-video reveal">
-                <div class="video-destaque">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/nNGJ5gbpR-8?autoplay=1&mute=1&loop=1&playlist=nNGJ5gbpR-8" frameborder="0" allowfullscreen></iframe>
+                <div class="video-placeholder" data-video-id="nNGJ5gbpR-8">
+                    <img src="https://img.youtube.com/vi/nNGJ5gbpR-8/maxresdefault.jpg" alt="Thumbnail Showreel">
+                    <div class="play-button">▶</div>
                 </div>
             </div>
         </div>
@@ -47,8 +58,9 @@
         
         <div class="grid-projetos">
             <div class="card-video">
-                <div class="thumb-container">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/SGKbNBrfUsU" frameborder="0" allowfullscreen></iframe>
+                <div class="thumb-container video-placeholder" data-video-id="SGKbNBrfUsU">
+                    <img src="https://img.youtube.com/vi/SGKbNBrfUsU/maxresdefault.jpg" alt="Thumbnail Projeto">
+                    <div class="play-button">▶</div>
                 </div>
                 <div class="card-info">
                     <h3>Documentário: GTA 4 The Lost and Damned</h3>
@@ -57,8 +69,9 @@
             </div>
 
             <div class="card-video">
-                <div class="thumb-container">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/iKdwk5nu5ws" frameborder="0" allowfullscreen></iframe>
+                <div class="thumb-container video-placeholder" data-video-id="iKdwk5nu5ws">
+                    <img src="https://img.youtube.com/vi/iKdwk5nu5ws/maxresdefault.jpg" alt="Thumbnail Projeto">
+                    <div class="play-button">▶</div>
                 </div>
                 <div class="card-info">
                     <h3>Showcase & Mods: Cyberpunk 2077</h3>
@@ -67,8 +80,9 @@
             </div>
 
             <div class="card-video">
-                <div class="thumb-container">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/nNGJ5gbpR-8" frameborder="0" allowfullscreen></iframe>
+                <div class="thumb-container video-placeholder" data-video-id="nNGJ5gbpR-8">
+                    <img src="https://img.youtube.com/vi/nNGJ5gbpR-8/maxresdefault.jpg" alt="Thumbnail Projeto">
+                    <div class="play-button">▶</div>
                 </div>
                 <div class="card-info">
                     <h3>Lista Dinâmica: 66 Fatos de GTA 6</h3>
@@ -77,6 +91,63 @@
             </div>
         </div>
 
+    </section>
+
+    <section id="numeros" class="reveal">
+        <div class="grid-numeros">
+            <div class="numero-item">
+                <span class="contagem" data-target="100">0</span><span>+</span>
+                <p>Vídeos Editados</p>
+            </div>
+            <div class="numero-item">
+                <span class="contagem" data-target="5">0</span><span>M+</span>
+                <p>Visualizações Geradas</p>
+            </div>
+            <div class="numero-item">
+                <span class="contagem" data-target="50">0</span><span>+</span>
+                <p>Clientes Satisfeitos</p>
+            </div>
+            <div class="numero-item">
+                <span class="contagem" data-target="24">0</span><span>h</span>
+                <p>Tempo Médio de Resposta</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="reveal">
+        <div class="titulo-secao">
+            <h2>O que dizem os clientes</h2>
+            <p>Feedback de quem já elevou o nível do canal</p>
+        </div>
+        
+        <div class="grid-depoimentos">
+            <div class="depoimento-card">
+                <div class="aspas">"</div>
+                <p>O Lincoln transformou completamente a dinâmica dos meus vídeos. A retenção subiu 40% logo no primeiro mês.</p>
+                <div class="autor">
+                    <strong>Canal de Games X</strong>
+                    <span>+200k inscritos</span>
+                </div>
+            </div>
+            
+            <div class="depoimento-card">
+                <div class="aspas">"</div>
+                <p>Prazos impecáveis e uma visão artística que poucos editores têm. Recomendo de olhos fechados!</p>
+                <div class="autor">
+                    <strong>Bruno Silva</strong>
+                    <span>Documentarista</span>
+                </div>
+            </div>
+            
+            <div class="depoimento-card">
+                <div class="aspas">"</div>
+                <p>O melhor investimento que fiz no meu canal este ano. A qualidade cinematográfica é outro nível.</p>
+                <div class="autor">
+                    <strong>Lucas Gameplay</strong>
+                    <span>Streamer</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="diferenciais" class="reveal">
@@ -114,53 +185,103 @@
 
     <div class="faq-container">
         <div class="faq-item">
-            <div class="faq-pergunta" onclick="toggleFAQ(this)">
+            <button class="faq-pergunta" onclick="toggleFAQ(this)" aria-expanded="false">
                 <span>💰 Qual é a faixa de preço?</span>
                 <span class="seta">+</span>
-            </div>
+            </button>
             <div class="faq-resposta">
-                <p>Trabalho com preços a partir de R$500 para curtas. O valor final depende da complexidade, duração e prazos. Fazemos orçamento personalizado após análise do projeto.</p>
+                <div class="faq-resposta-conteudo">
+                    <p>Trabalho com preços a partir de R$500 para curtas. O valor final depende da complexidade, duração e prazos. Fazemos orçamento personalizado após análise do projeto.</p>
+                </div>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-pergunta" onclick="toggleFAQ(this)">
+            <button class="faq-pergunta" onclick="toggleFAQ(this)" aria-expanded="false">
                 <span>⏰ Qual é o prazo médio de entrega?</span>
                 <span class="seta">+</span>
-            </div>
+            </button>
             <div class="faq-resposta">
-                <p>Um vídeo de 5-10 minutos costuma sair em 5-7 dias úteis. Prazos mais curtos são possíveis com taxa de rush. Discutimos isso na proposta inicial.</p>
+                <div class="faq-resposta-conteudo">
+                    <p>Um vídeo de 5-10 minutos costuma sair em 5-7 dias úteis. Prazos mais curtos são possíveis com taxa de rush. Discutimos isso na proposta inicial.</p>
+                </div>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-pergunta" onclick="toggleFAQ(this)">
+            <button class="faq-pergunta" onclick="toggleFAQ(this)" aria-expanded="false">
                 <span>🎥 Você faz todos os tipos de edição?</span>
                 <span class="seta">+</span>
-            </div>
+            </button>
             <div class="faq-resposta">
-                <p>Meu forte é conteúdo gaming, documentários e listas dinâmicas focadas em retenção. Também trabalho com vlogs, highlights e projetos corporativos. Consultamos sobre viabilidade.</p>
+                <div class="faq-resposta-conteudo">
+                    <p>Meu forte é conteúdo gaming, documentários e listas dinâmicas focadas em retenção. Também trabalho com vlogs, highlights e projetos corporativos. Consultamos sobre viabilidade.</p>
+                </div>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-pergunta" onclick="toggleFAQ(this)">
+            <button class="faq-pergunta" onclick="toggleFAQ(this)" aria-expanded="false">
                 <span>📞 Como você trabalha com revisões?</span>
                 <span class="seta">+</span>
-            </div>
+            </button>
             <div class="faq-resposta">
-                <p>Incluem-se 2 rodadas de ajustes na proposta. Mudanças maiores em escopo são cobradas à parte. Queremos que você fique 100% satisfeito.</p>
+                <div class="faq-resposta-conteudo">
+                    <p>Incluem-se 2 rodadas de ajustes na proposta. Mudanças maiores em escopo são cobradas à parte. Queremos que você fique 100% satisfeito.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<section id="processo" class="reveal">
+    <div class="titulo-secao">
+        <h2>Como Funciona?</h2>
+        <p>Meu fluxo de trabalho do primeiro contato à entrega final</p>
+    </div>
+
+    <div class="fluxo-container">
+        <div class="fluxo-item">
+            <div class="fluxo-numero">01</div>
+            <div class="fluxo-info">
+                <h3>Briefing & Estratégia</h3>
+                <p>Conversamos sobre seu nicho, tom do vídeo e objetivos de retenção. Definimos o estilo da edição.</p>
+            </div>
+        </div>
+
+        <div class="fluxo-item">
+            <div class="fluxo-numero">02</div>
+            <div class="fluxo-info">
+                <h3>Montagem & Corte</h3>
+                <p>O material bruto ganha forma. Foco total no ritmo (pacing) e na narrativa para prender o público.</p>
+            </div>
+        </div>
+
+        <div class="fluxo-item">
+            <div class="fluxo-numero">03</div>
+            <div class="fluxo-info">
+                <h3>Tratamento & Efeitos</h3>
+                <p>Color grading, sound design imersivo, legendas dinâmicas e efeitos visuais que elevam a qualidade.</p>
+            </div>
+        </div>
+
+        <div class="fluxo-item">
+            <div class="fluxo-numero">04</div>
+            <div class="fluxo-info">
+                <h3>Revisão & Entrega</h3>
+                <p>Você recebe o vídeo para aprovação. Fazemos os ajustes necessários e entregamos o arquivo final em 4K.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
     <section id="cta-transicao" class="reveal">
         <div class="cta-conteudo">
             <h2>Quer <span class="destaque-vermelho">aumentar a retenção</span> e a qualidade dos seus vídeos?</h2>
             <p>A edição certa é o que separa um canal amador de um projeto magnético. Desça a tela e vamos conversar sobre o seu canal.</p>
             
             <div class="seta-animada">
-                <a href="#contato">↓</a>
+                <a href="#contato" aria-label="Ir para seção de contato">↓</a>
             </div>
         </div>
     </section>
@@ -177,7 +298,7 @@
                         <span class="icone">✉️</span>
                         <div>
                             <strong>Email</strong>
-                            <p>kakuoriginal2@gmail.com</p>
+                            <p id="email-text">kakuoriginal2@gmail.com <button onclick="copiarEmail()" class="btn-copiar" title="Copiar Email">📋</button></p>
                         </div>
                     </div>
                     <div class="item">
@@ -202,7 +323,7 @@
             </div>
 
             <div class="contato-form">
-                <form action="https://formsubmit.co/seuemail@gmail.com" method="POST">
+                <form action="https://formsubmit.co/kakuoriginal2@gmail.com" method="POST">
                     <input type="hidden" name="_subject" value="Novo Contato pelo Portfólio!">
                     <input type="hidden" name="_captcha" value="false">
                     
@@ -219,15 +340,16 @@
 
     <footer>
         <div class="redes-sociais">
-            <a href="mailto:seuemail@gmail.com" class="link-social">✉️</a>
-            <a href="https://wa.me/5589981315875" target="_blank" class="link-social">📱</a>
-           <a href="#" class="link-social" title="Instagram">📷</a>
-        <a href="#" class="link-social" title="YouTube">🎮</a>
+            <a href="mailto:kakuoriginal2@gmail.com" class="link-social" aria-label="Enviar Email">✉️</a>
+            <a href="https://wa.me/5589981315875" target="_blank" class="link-social" aria-label="WhatsApp">📱</a>
+           <a href="#" class="link-social" title="Instagram" aria-label="Instagram">📷</a>
+        <a href="#" class="link-social" title="YouTube" aria-label="YouTube">🎮</a>
         </div>
       <p>&copy; 2026 Lincoln. Todos os direitos reservados.</p>
     </footer>
 
-    <a href="https://wa.me/5589981315875" target="_blank" class="whatsapp-flutuante">💬</a>
+    <a href="https://wa.me/5589981315875" target="_blank" class="whatsapp-flutuante" aria-label="Chat no WhatsApp">💬</a>
+    <button id="back-to-top" aria-label="Voltar ao topo">↑</button>
 
     <script src="script.js"></script>
 </body>

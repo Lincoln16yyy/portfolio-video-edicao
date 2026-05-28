@@ -452,52 +452,17 @@ footer {
 }
 
 /* ============================================
-   SEÇÃO: FAQ (DÚVIDAS FREQUENTES)
+   SEÇÃO: FAQ (DÚVIDAS FREQUENTES) - ATUALIZADO
    ============================================ */
 
 #faq {
     padding: 120px 20px;
-
-    /* REMOVE O BLOCO PRETO CHAPADO */
-    background: linear-gradient(
-        to bottom,
-        rgba(10, 10, 10, 0.25),
-        rgba(5, 5, 5, 0.12)
-    );
-
-    /* DEIXA O FUNDO APARECER */
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.25), rgba(5, 5, 5, 0.12));
     backdrop-filter: blur(6px);
-
     max-width: 1000px;
     margin: 0 auto;
-
-    /* VISUAL MAIS PREMIUM */
     border-top: 1px solid rgba(255, 0, 0, 0.06);
     border-bottom: 1px solid rgba(255, 0, 0, 0.06);
-
-    /* SUAVIZA A TRANSIÇÃO */
-    mask-image: linear-gradient(
-        to bottom,
-        transparent 0%,
-        black 10%,
-        black 90%,
-        transparent 100%
-    );
-}
-
-#faq .titulo-secao h2 {
-    font-size: 48px;
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-#faq .titulo-secao p {
-    font-size: 18px;
-    color: #ff0000;
-    font-weight: 400;
 }
 
 .faq-container {
@@ -509,20 +474,11 @@ footer {
 
 .faq-item {
     border: 1px solid rgba(255,255,255,0.08);
-
     border-radius: 14px;
-
     overflow: hidden;
-
     background: rgba(18,18,18,0.55);
-
     backdrop-filter: blur(10px);
-
     transition: all 0.3s ease;
-
-    box-shadow:
-        0 0 20px rgba(255,0,0,0.03),
-        inset 0 0 10px rgba(255,255,255,0.015);
 }
 
 .faq-item.ativo {
@@ -531,6 +487,7 @@ footer {
 }
 
 .faq-pergunta {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -540,7 +497,10 @@ footer {
     font-weight: 600;
     color: #ffffff;
     transition: all 0.3s ease;
-    user-select: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
+    text-align: left;
 }
 
 .faq-pergunta:hover {
@@ -549,14 +509,13 @@ footer {
 
 .faq-item.ativo .faq-pergunta {
     background: #ff0000;
-    color: #ffffff;
 }
 
 .faq-pergunta .seta {
     font-size: 24px;
     font-weight: bold;
     color: #ff0000;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .faq-item.ativo .faq-pergunta .seta {
@@ -564,36 +523,183 @@ footer {
     transform: rotate(45deg);
 }
 
+/* Animação Suave com Grid */
 .faq-resposta {
-    display: none;
-    padding: 25px;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: rgba(15,15,15,0.45);
-    border-top: 2px solid #333333;
 }
 
 .faq-item.ativo .faq-resposta {
-    display: block;
-    animation: slideDown 0.3s ease;
-    border-top-color: #ff0000;
+    grid-template-rows: 1fr;
+    border-top: 1px solid rgba(255, 0, 0, 0.2);
 }
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.faq-resposta-conteudo {
+    overflow: hidden;
 }
 
 .faq-resposta p {
-    color: #dddddd; /* Branco suave */
+    color: #dddddd;
     line-height: 1.8;
+    padding: 25px;
     margin: 0;
     font-size: 15px;
 }
+
+/* ============================================
+   BOTÃO COPIAR EMAIL
+   ============================================ */
+.btn-copiar {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: 0.3s;
+    font-size: 0.8rem;
+}
+
+.btn-copiar:hover {
+    background: #ff0000;
+    border-color: #ff0000;
+    transform: scale(1.1);
+}
+
+.btn-copiar.sucesso {
+    background: #25D366;
+    border-color: #25D366;
+}
+
+/* ============================================
+   MELHORIAS DE HOVER EM CARDS
+   ============================================ */
+.card-video {
+    position: relative;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-video::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.05), transparent);
+    transform: skewX(-25deg);
+    transition: 0.8s;
+}
+
+.card-video:hover::after {
+    left: 150%;
+}
+
+/* ============================================
+   BARRA DE PROGRESSO DE SCROLL
+   ============================================ */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(to right, #e50914, #ff5f6d);
+    z-index: 1001;
+    transition: width 0.1s;
+}
+
+/* ============================================
+   SEÇÃO: MEU PROCESSO
+   ============================================ */
+.fluxo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fluxo-item {
+    background: rgba(255,255,255,0.02);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+    transition: 0.3s;
+}
+
+.fluxo-item:hover {
+    border-color: #e50914;
+    background: rgba(229, 9, 20, 0.02);
+    transform: translateY(-5px);
+}
+
+.fluxo-numero {
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(229, 9, 20, 0.2);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    line-height: 1;
+}
+
+.fluxo-info h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+}
+
+.fluxo-info p {
+    color: #aaa;
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   BOTÃO VOLTAR AO TOPO
+   ============================================ */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px; /* Lado oposto ao WhatsApp */
+    background: #e50914;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    display: none; /* Aparece via JS */
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(229, 9, 20, 0.3);
+}
+
+#back-to-top:hover {
+    background: #fff;
+    color: #e50914;
+    transform: translateY(-5px);
+}
+
+/* ============================================
+   MENU ATIVO (SCROLL SPY)
+   ============================================ */
+.menu a.active {
+    color: #e50914;
+    text-shadow: 0 0 15px rgba(229, 9, 20, 0.6);
+}
+
+@media (max-width: 768px) {
+    #back-to-top { bottom: 100px; right: 30px; left: auto; width: 45px; height: 45px; } /* Mobile: um em cima do outro */
+}
+
 
 /* ============================================
    RESPONSIVIDADE
@@ -632,8 +738,128 @@ footer {
 }
 
 /* ============================================
-   VARIAÇÕES ADICIONAIS (Opcional)
+   ESTILOS PARA VIDEO PLACEHOLDERS (PERFORMANCE)
    ============================================ */
+.video-placeholder {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: #0a0a0a;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(229, 9, 20, 0.3);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+.video-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+.video-placeholder:hover img {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(229, 9, 20, 0.9);
+    color: #fff;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding-left: 5px; /* Ajuste visual do triângulo */
+    box-shadow: 0 0 30px rgba(229, 9, 20, 0.5);
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.video-placeholder:hover .play-button {
+    transform: translate(-50%, -50%) scale(1.15);
+    background: #ff0000;
+}
+
+/* ============================================
+   SEÇÃO: DEPOIMENTOS
+   ============================================ */
+#depoimentos {
+    background: linear-gradient(180deg, #030303 0%, #080808 100%);
+}
+
+.grid-depoimentos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.depoimento-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.depoimento-card:hover {
+    background: rgba(229, 9, 20, 0.03);
+    border-color: rgba(229, 9, 20, 0.2);
+    transform: translateY(-5px);
+}
+
+.aspas {
+    font-size: 5rem;
+    color: #e50914;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    opacity: 0.2;
+    font-family: serif;
+    line-height: 1;
+}
+
+.depoimento-card p {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.autor {
+    display: flex;
+    flex-direction: column;
+}
+
+.autor strong {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.autor span {
+    color: #888;
+    font-size: 0.85rem;
+}
+
+/* Ajuste no Hero Video para usar o novo placeholder */
+.video-destaque {
+    border: none;
+    box-shadow: none;
+    animation: none; /* A animação agora será no container de fora se desejar */
+}
 
 /* Se você quiser uma versão com fundo mais claro */
 .light-mode #diferenciais {
@@ -679,4 +905,79 @@ footer {
 
 .light-mode .faq-resposta p {
     color: #333;
+}
+
+/* ============================================
+   SEÇÃO: ESTATÍSTICAS (NÚMEROS)
+   ============================================ */
+#numeros {
+    background: rgba(229, 9, 20, 0.03);
+    padding: 60px 5%;
+    border-top: 1px solid rgba(229, 9, 20, 0.1);
+    border-bottom: 1px solid rgba(229, 9, 20, 0.1);
+}
+
+.grid-numeros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.numero-item span {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+}
+
+.numero-item .contagem {
+    color: #e50914;
+}
+
+.numero-item p {
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+/* ============================================
+   VALIDAÇÃO E FEEDBACK DO FORMULÁRIO
+   ============================================ */
+.contato-form input:valid:not(:placeholder-shown),
+.contato-form textarea:valid:not(:placeholder-shown) {
+    border-color: #25D366;
+}
+
+.botao-enviar.enviando {
+    background: #555;
+    pointer-events: none;
+    position: relative;
+    color: transparent;
+}
+
+.botao-enviar.enviando::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .numero-item span { font-size: 2.5rem; }
 }
