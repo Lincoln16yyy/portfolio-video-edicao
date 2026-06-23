@@ -151,13 +151,26 @@ nav {
     min-height: 60px; 
 }
 
+#efeito-maquina {
+    border-right: 2px solid #e50914;
+    padding-right: 4px;
+    animation: blink-caret 0.75s step-end infinite;
+    display: inline;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #e50914; }
+}
+
 .hero-botoes {
     display: flex;
     gap: 20px;
 }
 
 .hero-video {
-    flex: 1.2; 
+    flex: 1.2;
+    animation: flutuar 6s ease-in-out infinite;
 }
 
 .video-destaque {
@@ -267,6 +280,80 @@ nav {
 }
 
 .contato-info { flex: 1; }
+
+.info-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.info-itens .item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.info-itens .icone {
+    background: rgba(229, 9, 20, 0.1);
+    color: #e50914;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(229, 9, 20, 0.2);
+    box-shadow: 0 0 15px rgba(229, 9, 20, 0.1);
+}
+
+.info-itens .icone svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.info-itens div strong {
+    display: block;
+    color: #fff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-itens div p {
+    color: #aaa;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.info-itens div p a {
+    transition: 0.3s;
+}
+
+.info-itens div p a:hover {
+    color: #e50914;
+    text-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
+}
+
+.link-social svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.whatsapp-flutuante svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+}
+
+#back-to-top svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
 .contato-form { flex: 1; background: #0a0a0a; padding: 50px; border-radius: 20px; border: 1px solid #1a1a1a; }
 .contato-form input, .contato-form textarea { width: 100%; background: #111; border: 1px solid #222; padding: 18px; border-radius: 8px; color: #fff; margin-bottom: 20px; }
 .contato-form input:focus, .contato-form textarea:focus { border-color: #e50914; outline: none; }
